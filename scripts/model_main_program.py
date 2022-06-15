@@ -45,11 +45,11 @@ if __name__=='__main__':
     # testing the model
     print('Testing the model')
     dbTest = pipeline.predict(dbTest)
-    dbTest.to_csv(os.path.join('.','data','Fig4.csv'))
+    dbTest.to_csv(os.path.join('.','data','Fig4_data.csv'))
     
     print('Generating database for figure')
     db_Fig3 = pipe.fit_transform(db)
-    db_Fig3.to_csv(os.path.join('.','data','Fig3.csv'))
+    db_Fig3.to_csv(os.path.join('.','data','Fig3_data.csv'))
     
     print('Done')
     
