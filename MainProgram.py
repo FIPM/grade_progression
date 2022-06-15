@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, session
-from dotenv import dotenv_values
+from os import environ
+from dotenv import load_dotenv
 
 import pandas as pd
 import os
@@ -11,12 +12,12 @@ import plotly.express as px
 import json
 
 from scripts.import_data import df_Navbar, df_Content, db_fig1, db_fig2, db_fig3, db_fig4
+load_dotenv('.env')
 
-config = dotenv_values(".env")
 
 # creating app
 app = Flask(__name__)
-app.secret_key = config['SECRET_KEY'] 
+app.secret_key = os.environ['SECRET_KEY'] 
 
 
 # home
